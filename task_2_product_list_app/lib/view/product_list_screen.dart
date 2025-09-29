@@ -86,9 +86,9 @@ class ProductListScreen extends StatelessWidget {
                           leading: Image(
                             height: 50.h,
                             width: 50.w,
-                            image: NetworkImage(product['image']),
+                            image: NetworkImage(product.image),
                           ),
-                          title: Text(product['title']),
+                          title: Text(product.title),
                         ),
                       );
                     },

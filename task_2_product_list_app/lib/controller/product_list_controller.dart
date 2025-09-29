@@ -26,7 +26,7 @@ class ProductListController extends GetxController {
       listData.assignAll(data);
 
       final uniqCategories =
-          data.map((item) => item['category'] as String).toSet().toList();
+          data.map((item) => item.category as String).toSet().toList();
       categories.assignAll(uniqCategories);
     } finally {
       isLoading(false);
@@ -39,7 +39,7 @@ class ProductListController extends GetxController {
     } else {
       listData.assignAll(
         originalData.where((item) {
-          final product = item['title'].toString().toLowerCase();
+          final product = item.title.toString().toLowerCase();
           return product.contains(query.toLowerCase());
         }),
       );
