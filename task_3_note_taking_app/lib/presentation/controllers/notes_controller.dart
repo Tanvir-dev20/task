@@ -15,15 +15,18 @@ class NotesController extends GetxController {
     required this.deleteNote,
   });
 
-  List<Note> notes = [];
+  RxList<Note> notes = <Note>[].obs;
+  void onInit() {
+    super.onInit();
+    loadNotes();
+  }
 
   Future<void> init() async {
     await loadNotes();
   }
 
   Future<void> loadNotes() async {
-    notes = await getAllNotes();
-    update();
+    notes.value = await getAllNotes();
   }
 
   Future<void> removeNote(String id) async {

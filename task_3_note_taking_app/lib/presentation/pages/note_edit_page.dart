@@ -48,6 +48,7 @@ class NoteEditPage extends StatelessWidget {
                                 Colors.blue,
                                 Colors.green,
                                 Colors.red,
+                                Colors.black,
                               ])
                                 GestureDetector(
                                   onTap: () => Navigator.pop(context, c),

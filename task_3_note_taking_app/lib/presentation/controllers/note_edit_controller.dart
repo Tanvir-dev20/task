@@ -31,7 +31,7 @@ class NoteEditController extends GetxController {
 
   Future<void> saveNote() async {
     final note = Note(
-      id: noteId ?? DateTime.now().millisecondsSinceEpoch.toString(),
+      id: noteId ?? DateTime.now().toString(),
       title: titleController.text,
       content: contentController.text,
       color: selectedColor.value,
